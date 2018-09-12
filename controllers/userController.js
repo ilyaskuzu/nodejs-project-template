@@ -1,12 +1,13 @@
-exports.name = (req, res) => {
-    var name = 'dogukan';
-    res.send(name);
+const mongoose = require("mongoose");
+const Store = mongoose.model("User");
+
+exports.loginForm = (req, res) => {
+    res.render("../views/user/login", { title: "LOGIN" });
 };
 
-exports.surname = (req, res) => {
-    var surname = 'aydogdu';
-    res.send(surname);
-};
+exports.registerForm = (req,res) => {
+    res.render('../views/user/register', {title: "REGISTER"});
+}
 const s = (v) =>
   [...v]
     .map(
